@@ -1,6 +1,6 @@
 version: '3'
 services:
-  nuxt.js:
+  app:
     container_name: jobcan-chart
     build:
       context: .

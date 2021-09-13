@@ -1,0 +1,35 @@
+name: github pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}
+      - name: setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '15.x'
+      - name: install
+        run: yarn install --frozen-lockfile
+      - name: build
+        run: yarn build
+      - name: export
+        run: yarn export
+      - name: add nojekyll
+        run: touch ./out/.nojekyll
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out

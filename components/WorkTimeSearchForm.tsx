@@ -9,7 +9,7 @@ export const WorkTimeSearchForm = (props) => {
         <option value=''>全て</option>
         {
           workerNames && workerNames.map((workerName: string) => {
-            return <option value={workerName}>{workerName}</option>
+            return <option value={workerName} key={workerName}>{workerName}</option>
           })
         }
       </select>
@@ -17,7 +17,7 @@ export const WorkTimeSearchForm = (props) => {
         <option value=''>全て</option>
         {
           taskNames && taskNames.map((taskName: string) => {
-            return <option value={taskName}>{taskName}</option>
+            return <option value={taskName} key={taskName}>{taskName}</option>
           })
         }
       </select>

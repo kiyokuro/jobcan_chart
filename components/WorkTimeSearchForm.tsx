@@ -5,7 +5,7 @@ export const WorkTimeSearchForm = (props) => {
 
   return (
     <div>
-      <select name="wokerName" id="wokerName" onChange={(e) => setSelectedWorkers(e.target.value)}>
+      <select name="wokerName" id="wokerName" onChange={(e) => setSelectedWorkers(e.target.value ? [e.target.value] : [])}>
         <option value=''>全て</option>
         {
           workerNames && workerNames.map((workerName: string) => {
@@ -13,7 +13,7 @@ export const WorkTimeSearchForm = (props) => {
           })
         }
       </select>
-      <select name="taskName" id="taskName" onChange={(e) => setSelectedTasks(e.target.value)}>
+      <select name="taskName" id="taskName" onChange={(e) => setSelectedTasks(e.target.value ? [e.target.value] : [])}>
         <option value=''>全て</option>
         {
           taskNames && taskNames.map((taskName: string) => {

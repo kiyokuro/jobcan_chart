@@ -58,7 +58,6 @@ export const WorkTimeChrts = () => {
                 key={workerName}
                 chartData={chartData[workerName]}
                 workerName={workerName}
-                selectedWorkers={selectedWorkers}
                 selectedTasks={selectedTasks}
               />
             )

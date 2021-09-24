@@ -2,7 +2,7 @@ import React from 'react'
 import { colorPattern } from './colorPattern'
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 
-export const WorkTimeBarChrt = ({ chartData: chartData, workerName: workerName, selectedWorkers: selectedWorkers, selectedTasks: selectedTasks }) => {
+export const WorkTimeBarChrt = ({ chartData: chartData, workerName: workerName, selectedTasks: selectedTasks }) => {
   return (
     <div key={workerName}>
       <div>
